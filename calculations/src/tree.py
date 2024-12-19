@@ -51,5 +51,5 @@ def calculation_tree(
         return {"status": "error", "message": f"An error occurred: {str(e)}"}
 
 
-result = calculation_tree(88.3, 1.69, 3, 33.3, 3.5, 4)
-print(result)
+# result = calculation_tree(88.3, 1.69, 3, 33.3, 3.5, 4)
+# print(result)

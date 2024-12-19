@@ -5,4 +5,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[MlController::class,'index']);
 
-Route::post('/process-input', [MlController::class, 'calculationInput'])->name('calculation.input');
+Route::get('/prediction', [MlController::class, 'calculationInput'])->name('calculation.input');

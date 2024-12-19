@@ -17,21 +17,21 @@ class MlController extends Controller
     public function index()
     {
         // requestt api from backend python
-        $response = Http::get('http://127.0.0.1:8000/');
-        dd($response);
-
-
-
+        return view("index");
     }
- 
-    public function calculationInput(Request  $request){
-        $name1 = $request -> input('number1');
-        $name2 = $request -> input('number2');
-        $hasil = $name1 + $name2;
+
+    public function calculationInput(Request  $request)
+    {
+
+        $response = Http::get("http://127.0.0.1:8000/prediction/", $request->all());
+        $input = $response->json('result')['input'];
+        $hasil = $response->json('result')['hasil'];
+        return view("index",
+        [
+            "input" =>$input,
+            "hasil"=> $hasil
+        ]);
         
-        return view('index', ['hasil' => $hasil]);
-
-
     }
     /**
      * Show the form for creating a new resource.
@@ -44,10 +44,7 @@ class MlController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreMlRequest $request)
-    {
-
-    }
+    public function store(StoreMlRequest $request) {}
 
     /**
      * Display the specified resource.
