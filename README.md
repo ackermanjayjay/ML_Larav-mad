@@ -75,6 +75,6 @@ Let us simplify calorie tracking, empower healthier lifestyles, and redefine how
   alt="Python">
   <img src="https://img.shields.io/badge/Laravel-2e2e2e?logo=laravel" 
   alt="Laravel">
-    <img src="  https://shields.io/badge/MySQL-lightgrey?logo=mysql&style=plastic&logoColor=white&labelColor=blue" 
+   <img src="https://shields.io/badge/MySQL-lightgrey?logo=mysql&style=plastic&logoColor=white&labelColor=blue" 
   alt="mysql">
   </p>
