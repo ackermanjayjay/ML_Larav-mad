@@ -15,7 +15,7 @@ app.add_middleware(
 )
 
 
-@app.get("/")
+@app.get("/") 
 async def main():
        return {
            "result":"model ready"
@@ -26,11 +26,10 @@ async def main():
 async def pred(numbers: Request):
     query_params = dict(numbers.query_params)
     result = calculation_tree(
-        query_params.get("a"),
-        query_params.get("b"),
-        query_params.get("c"),
-        query_params.get("d"),
-        query_params.get("e"),
-        query_params.get("f"),
+        query_params.get("weight"),
+        query_params.get("duration"),
+        query_params.get("workout_type"),
+        query_params.get("water_intake"),
+        query_params.get("workout_frequency"),
     )
     return {"result": result}

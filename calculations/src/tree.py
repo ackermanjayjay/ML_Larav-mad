@@ -4,11 +4,19 @@ import numpy as np
 from loadedModel import load_model
 
 
+def encode_type_workout(workout):
+  data = {
+      0 : "Yoga" ,
+      1 : "HIIT" ,
+      2 : "Cardio",
+      3 : "Strength"
+  }
+  return data.get(workout)
+  
 def calculation_tree(
     Weight,
     Session_Duration,
     Workout_Type,
-    Fat_Percentage,
     Water_Intake,
     Workout_Frequency,
 ):
@@ -20,7 +28,6 @@ def calculation_tree(
                     Weight,
                     Session_Duration,
                     Workout_Type,
-                    Fat_Percentage,
                     Water_Intake,
                     Workout_Frequency,
                 ]
@@ -36,8 +43,7 @@ def calculation_tree(
             "input": {
                 "Weight": Weight,
                 "Session_Duration": Session_Duration,
-                "Workout_Type": Workout_Type,
-                "Fat_Percentage": Fat_Percentage,
+                "Workout_Type": encode_type_workout(Workout_Type),
                 "Water_Intake": Water_Intake,
                 "Workout_Frequency": Workout_Frequency,
             },
@@ -45,11 +51,11 @@ def calculation_tree(
         }
 
     except FileNotFoundError as e:
-        return {"status": "error", "message": str(e), "gagal": "kocak"}
+        return {"status": "error", "message": str(e)}
 
     except Exception as e:
         return {"status": "error", "message": f"An error occurred: {str(e)}"}
 
 
-# result = calculation_tree(88.3, 1.69, 3, 33.3, 3.5, 4)
-# print(result)
+result = calculation_tree(88.3, 1.69, 0, 3.5, 4)
+print(result)

@@ -7,6 +7,7 @@ use App\Http\Requests\StoreMlRequest;
 use App\Http\Requests\UpdateMlRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Arr;
 
 
 class MlController extends Controller
@@ -21,17 +22,33 @@ class MlController extends Controller
     }
 
     public function calculationInput(Request  $request)
-    {
+    {   
+        $weight = $request->input('weight');
+        $duration = $request->input('duration');
+        $category = $request->input('selection');
+        $water_intake = $request->input('water_intake');
+        $workout_frequency = $request->input('workout_frequency');
+        $queryParams = [
+            'weight' => $weight,
+            'duration' => $duration,
+            'workout_type' =>  intval($category) ,
+            'water_intake' => $water_intake,
+            'workout_frequency' => $workout_frequency,
+    ];
+    
+    
+    
+    
+    $response = Http::get("http://127.0.0.1:8000/prediction/",$queryParams);
+    
+    $input = $response->json('result')['input'];
+    $hasil = $response->json('result')['hasil'];
 
-        $response = Http::get("http://127.0.0.1:8000/prediction/", $request->all());
-        $input = $response->json('result')['input'];
-        $hasil = $response->json('result')['hasil'];
         return view("index",
         [
             "input" =>$input,
             "hasil"=> $hasil
         ]);
-        
     }
     /**
      * Show the form for creating a new resource.
