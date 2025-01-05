@@ -2,7 +2,7 @@
 
 ---
 
-## **LaravMad: Laravel Machine Decision tree**
+## **LaravMad: Laravel Machine Decision**
 
 Managing calorie intake is a fundamental aspect of personal health and fitness. However, calculating calorie consumption accurately requires understanding multiple factors such as weight, activity levels, and lifestyle habits. Many individuals find this process challenging and time-consuming, limiting their ability to make informed health decisions.  
 
@@ -31,9 +31,7 @@ Our solution is a **Calorie Prediction Platform** that leverages **machine learn
 #### **Machine Learning**:
 - **Decision Tree Algorithm**: Developed using Python and integrated via FastAPI for fast and accurate calorie predictions.
 
-#### **Deployment**:
-- **Docker**: Simplifies deployment with containerization of Laravel, FastAPI, and MySQL.
-- **Cloud Hosting**: AWS/GCP for secure, scalable, and global access.
+
 
 ---
 
@@ -59,3 +57,24 @@ This platform is ideal for:
 Our platform bridges the gap between advanced **machine learning** and user-friendly interfaces, delivering value to both end-users and businesses in the health and fitness industry. By leveraging **Laravel** for API integration, **MySQL** for data storage, and **FastAPI** for machine learning computations, we ensure a secure, reliable, and scalable system that meets the demands of modern users.  
 
 Let us simplify calorie tracking, empower healthier lifestyles, and redefine how users interact with fitness technology.
+
+<p align="left">
+<a  href= "https://github.com/psf/black">
+  <img src="https://img.shields.io/badge/code%20style-black-000000.svg" 
+  alt="Code style: black"
+  ></a>
+  <img src="https://img.shields.io/github/repo-size/ackermanjayjay/ML_Larav-mad" 
+  alt="Size">
+</p>
+
+## Tools
+<p align="left">
+  <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" 
+  alt="FastApi">
+  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" 
+  alt="Python">
+  <img src="https://img.shields.io/badge/Laravel-2e2e2e?logo=laravel" 
+  alt="Laravel">
+    <img src="  https://shields.io/badge/MySQL-lightgrey?logo=mysql&style=plastic&logoColor=white&labelColor=blue" 
+  alt="mysql">
+  </p>
